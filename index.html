@@ -199,10 +199,10 @@
                 numberDisplay.className = 'number-display show-answer';
                 showAnswer = true;
             } else if (showAnswer) {
-                if (numberDisplay.textContent === '✡︎') {
+                if (numberDisplay.textContent === '*') {
                     numberDisplay.textContent = `${totalSum}`;
                     numberDisplay.className = 'number-display answer';
-                } else {
+                } else if (numberDisplay.textContent === `${totalSum}`) {
                     resetGame();
                     gameActive = false;
                 }
