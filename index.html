@@ -195,11 +195,11 @@
                 startGame();
             } else if (gameActive && questionCount >= totalQuestions) {
                 gameActive = false;
-                numberDisplay.textContent = '*';
+                numberDisplay.textContent = '✡︎';
                 numberDisplay.className = 'number-display show-answer';
                 showAnswer = true;
             } else if (showAnswer) {
-                if (numberDisplay.textContent === '#') {
+                if (numberDisplay.textContent === '*') {
                     numberDisplay.textContent = `${totalSum}`;
                     numberDisplay.className = 'number-display answer';
                 } else {
