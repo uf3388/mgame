@@ -252,14 +252,21 @@
             totalSum += currentNumber;
             questionCount++;
             
-            // 設置數字顏色
-            numberDisplay.textContent = currentNumber;
-            numberDisplay.className = `number-display ${currentNumber > 0 ? 'positive' : 'negative'}`;
+            // 先清空顯示
+            numberDisplay.textContent = '';
+            numberDisplay.className = 'number-display';
             
-            // 計時顯示下一個數字
-            timer = setTimeout(() => {
-                showNextNumber();
-            }, displayTime);
+            // 短暫延遲後顯示新數字
+            setTimeout(() => {
+                // 設置數字顏色
+                numberDisplay.textContent = currentNumber;
+                numberDisplay.className = `number-display ${currentNumber > 0 ? 'positive' : 'negative'}`;
+                
+                // 計時顯示下一個數字
+                timer = setTimeout(() => {
+                    showNextNumber();
+                }, displayTime);
+            }, 100);
         }
         
         function resetGame() {
